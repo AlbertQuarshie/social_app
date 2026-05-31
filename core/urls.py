@@ -9,9 +9,9 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('api/', include('socialapp.urls')),
     
-    # This line adds the "Log In" / "Log Out" portal to the browsable API webpage interface
-    path('api-auth/', include('rest_framework.urls')), # <-- ADD THIS LINE
+    path('api-auth/', include('rest_framework.urls')), 
 ]
 
 if settings.DEBUG:
     urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+    urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
