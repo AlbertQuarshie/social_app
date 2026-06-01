@@ -27,7 +27,7 @@ class ProfileDetailView(generics.RetrieveUpdateAPIView):
             return Response({"detail": "Permission denied. You can only edit your own profile."}, status=status.HTTP_403_FORBIDDEN)
         return super().put(request, *args, **kwargs)
 
-# personalized feed
+# Personalized feed
 class PostListCreateView(generics.ListCreateAPIView):
     queryset = Post.objects.all().order_by('-created_at')
     serializer_class = PostSerializer
@@ -135,7 +135,7 @@ class FollowUnfollowView(APIView):
         request.user.profile.following.remove(target_user.profile)
         return Response({"detail": f"Unfollowed {target_user.username} successfully."}, status=status.HTTP_200_OK)
 
-# search
+# Search
 class UserSearchView(generics.ListAPIView):
     serializer_class = UserSerializer
     permission_classes = [permissions.AllowAny]

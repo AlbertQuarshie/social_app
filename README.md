@@ -20,7 +20,7 @@
 
 The following software should be installed before running the project:
 
-1. Python 3.14 or later
+1. Python 3.14
 
 2. Django (Latest Version)
 
@@ -64,6 +64,8 @@ settings.py
 ```
 
 Choose PostgreSQL, MySQL, or SQLite depending on your environment.
+
+- Note this project is hardcoded with Postgresql so change the settings whenever a different database is to be used.
 
 ### 5. Run Migrations
 
@@ -207,9 +209,11 @@ GET /api/search/users/?query={search_query}
 ---
 
 ## I. Screenshots
-
+1. Registration Page Endpoint
 ![Register](screenshots/image-1.png)
 
+2. Login Page Endpoint
 ![Login](screenshots/image-2.png)
 
+3. Feed Post Endpoint
 ![Posts](screenshots/image.png)
